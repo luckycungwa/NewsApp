@@ -6,7 +6,8 @@ import ArticleList from './ArticleList';
 const Home = () => {
   return (
     <View>
-      <ArticleList/>
+      {/* <ArticleList/> */}
+      <Categories/>
     </View>
   );
 }

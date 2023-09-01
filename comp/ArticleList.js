@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, {useState, useEffect } from "react";
 import {
   View,
   Text,
@@ -7,6 +7,7 @@ import {
   Image,
   StyleSheet,
 } from "react-native";
+
 import axios from "axios";
 
 const ArticleList = ({ route, navigation }) => {
@@ -29,7 +30,7 @@ const ArticleList = ({ route, navigation }) => {
   }, [category]);
 
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
     <Text style={styles.articleTitle}>Article Details</Text>
       <View style={styles.articleContainer}>
       {/* Flood with articles */}
@@ -54,7 +55,7 @@ const ArticleList = ({ route, navigation }) => {
           )}
         />
       </View>
-    </View>
+    </SafeAreaView>
   );
 };
 
@@ -65,19 +66,20 @@ const styles = StyleSheet.create({
   },
   articleItem: {
     padding: 10,
-    marginVertical: 5,
+    marginVertical: 4,
     backgroundColor: "#171717",
-    borderRadius: 5,
+    borderRadius: 4,
   },
   articleImage: {
     width: "100%",
     height: 200,
-    borderRadius: 5,
+    borderRadius: 4,
   },
   articleTitle: {
     color: "#DEE0E7",
     fontSize: 18,
     marginTop: 10,
+    fontWeight: "bold",
   },
   articleDescription: {
     color: "#DEE0E7",
@@ -88,6 +90,8 @@ const styles = StyleSheet.create({
     margin: 12,
     paddingVertical: 4,
     paddingHorizontal: 12,
+    borderColor: "#DEE0E7", //for content loader 
+    borderWidth: 1,
   },
 });
 
